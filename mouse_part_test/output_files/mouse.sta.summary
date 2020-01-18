@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk_'
+Slack : -0.754
+TNS   : -8.060
+
+Type  : Slow 1200mV 85C Model Setup 'Lab1Demo:inst|Debouncer:inst40|inst1'
+Slack : -0.546
+TNS   : -0.703
+
+Type  : Slow 1200mV 85C Model Hold 'clk_'
+Slack : 0.283
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Lab1Demo:inst|Debouncer:inst40|inst1'
+Slack : 0.383
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_'
+Slack : -3.000
+TNS   : -20.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Lab1Demo:inst|Debouncer:inst40|inst1'
+Slack : -1.000
+TNS   : -19.000
+
+Type  : Slow 1200mV 0C Model Setup 'clk_'
+Slack : -0.579
+TNS   : -5.835
+
+Type  : Slow 1200mV 0C Model Setup 'Lab1Demo:inst|Debouncer:inst40|inst1'
+Slack : -0.389
+TNS   : -0.389
+
+Type  : Slow 1200mV 0C Model Hold 'clk_'
+Slack : 0.184
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Lab1Demo:inst|Debouncer:inst40|inst1'
+Slack : 0.345
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_'
+Slack : -3.000
+TNS   : -20.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Lab1Demo:inst|Debouncer:inst40|inst1'
+Slack : -1.000
+TNS   : -19.000
+
+Type  : Fast 1200mV 0C Model Setup 'clk_'
+Slack : 0.029
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'Lab1Demo:inst|Debouncer:inst40|inst1'
+Slack : 0.146
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_'
+Slack : 0.114
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Lab1Demo:inst|Debouncer:inst40|inst1'
+Slack : 0.200
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_'
+Slack : -3.000
+TNS   : -20.952
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Lab1Demo:inst|Debouncer:inst40|inst1'
+Slack : -1.000
+TNS   : -19.000
+
+------------------------------------------------------------

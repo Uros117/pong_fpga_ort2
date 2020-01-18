@@ -1,0 +1,1030 @@
+|mouse
+led[0] <= t0.DB_MAX_OUTPUT_PORT_TYPE
+led[1] <= t1.DB_MAX_OUTPUT_PORT_TYPE
+led[2] <= d[0].DB_MAX_OUTPUT_PORT_TYPE
+led[3] <= d[1].DB_MAX_OUTPUT_PORT_TYPE
+led[4] <= d[2].DB_MAX_OUTPUT_PORT_TYPE
+led[5] <= d[3].DB_MAX_OUTPUT_PORT_TYPE
+led[6] <= d[4].DB_MAX_OUTPUT_PORT_TYPE
+led[7] <= d[5].DB_MAX_OUTPUT_PORT_TYPE
+led[8] <= d[6].DB_MAX_OUTPUT_PORT_TYPE
+led[9] <= d[7].DB_MAX_OUTPUT_PORT_TYPE
+clk_ => Lab1Demo:inst.CLK
+clk_ => REGX:inst1.clk
+clk_ => inst5.CLK
+clk_ => inst8.CLK
+clk_ => REGX:inst2.clk
+clkps2 => Lab1Demo:inst.PS2_CLK
+ps2data => Lab1Demo:inst.PS2_DATA
+
+
+|mouse|Lab1Demo:inst
+read_end <= inst39.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst39.CLK
+CLK => Debouncer:inst40.CLK
+CLK => RisingEdge:inst29.CLK
+CLK => REG1_INC_CL:inst41.clk
+CLK => REG1_INC_CL:inst2.clk
+CLK => inst30.CLK
+CLK => inst31.CLK
+CLK => inst32.CLK
+CLK => inst33.CLK
+CLK => inst34.CLK
+CLK => inst35.CLK
+CLK => inst36.CLK
+CLK => inst37.CLK
+PS2_CLK => inst.IN0
+PS2_DATA => inst3.IN0
+PS2_DATA => inst1.DATAIN
+PS2_DATA => inst16.DATAIN
+t2 <= inst42.DB_MAX_OUTPUT_PORT_TYPE
+t1 <= inst44.DB_MAX_OUTPUT_PORT_TYPE
+t0 <= inst46.DB_MAX_OUTPUT_PORT_TYPE
+D_[0] <= inst37.DB_MAX_OUTPUT_PORT_TYPE
+D_[1] <= inst36.DB_MAX_OUTPUT_PORT_TYPE
+D_[2] <= inst35.DB_MAX_OUTPUT_PORT_TYPE
+D_[3] <= inst34.DB_MAX_OUTPUT_PORT_TYPE
+D_[4] <= inst33.DB_MAX_OUTPUT_PORT_TYPE
+D_[5] <= inst32.DB_MAX_OUTPUT_PORT_TYPE
+D_[6] <= inst31.DB_MAX_OUTPUT_PORT_TYPE
+D_[7] <= inst30.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|Lab1Demo:inst|RisingEdge:inst29
+OUT <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst.CLK
+CLK => inst1.CLK
+IN => inst.DATAIN
+
+
+|mouse|Lab1Demo:inst|Debouncer:inst40
+OUT <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst.CLK
+CLK => inst1.CLK
+CLK => REG1_INC_CL:inst2.clk
+CLK => REG1_INC_CL:inst3.clk
+CLK => REG1_INC_CL:inst4.clk
+IN => inst.DATAIN
+IN => inst6.IN0
+
+
+|mouse|Lab1Demo:inst|Debouncer:inst40|REG1_INC_CL:inst2
+C <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+inc => inst1.IN0
+inc => inst2.IN1
+inc => inst.IN1
+cl => inst2.IN0
+clk => inst.CLK
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|Lab1Demo:inst|Debouncer:inst40|REG1_INC_CL:inst3
+C <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+inc => inst1.IN0
+inc => inst2.IN1
+inc => inst.IN1
+cl => inst2.IN0
+clk => inst.CLK
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|Lab1Demo:inst|Debouncer:inst40|REG1_INC_CL:inst4
+C <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+inc => inst1.IN0
+inc => inst2.IN1
+inc => inst.IN1
+cl => inst2.IN0
+clk => inst.CLK
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|Lab1Demo:inst|REG1_INC_CL:inst41
+C <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+inc => inst1.IN0
+inc => inst2.IN1
+inc => inst.IN1
+cl => inst2.IN0
+clk => inst.CLK
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|Lab1Demo:inst|REG1_INC_CL:inst2
+C <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+inc => inst1.IN0
+inc => inst2.IN1
+inc => inst.IN1
+cl => inst2.IN0
+clk => inst.CLK
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|REGX:inst1
+clk => data[0].CLK
+clk => data[1].CLK
+clk => data[2].CLK
+clk => data[3].CLK
+clk => data[4].CLK
+clk => data[5].CLK
+clk => data[6].CLK
+clk => data[7].CLK
+clk => data[8].CLK
+clk => data[9].CLK
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+cl => data_next[9].OUTPUTSELECT
+cl => data_next[8].OUTPUTSELECT
+cl => data_next[7].OUTPUTSELECT
+cl => data_next[6].OUTPUTSELECT
+cl => data_next[5].OUTPUTSELECT
+cl => data_next[4].OUTPUTSELECT
+cl => data_next[3].OUTPUTSELECT
+cl => data_next[2].OUTPUTSELECT
+cl => data_next[1].OUTPUTSELECT
+cl => data_next[0].OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+data_in[0] => data_next.DATAB
+data_in[1] => data_next.DATAB
+data_in[2] => data_next.DATAB
+data_in[3] => data_next.DATAB
+data_in[4] => data_next.DATAB
+data_in[5] => data_next.DATAB
+data_in[6] => data_next.DATAB
+data_in[7] => data_next.DATAB
+data_in[8] => data_next.DATAB
+data_in[9] => data_next.DATAB
+data_out[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= data[3].DB_MAX_OUTPUT_PORT_TYPE
+data_out[4] <= data[4].DB_MAX_OUTPUT_PORT_TYPE
+data_out[5] <= data[5].DB_MAX_OUTPUT_PORT_TYPE
+data_out[6] <= data[6].DB_MAX_OUTPUT_PORT_TYPE
+data_out[7] <= data[7].DB_MAX_OUTPUT_PORT_TYPE
+data_out[8] <= data[8].DB_MAX_OUTPUT_PORT_TYPE
+data_out[9] <= data[9].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst13
+cout <= ALU1:inst.cout
+a[0] => ALU1:inst8.a
+a[1] => ALU1:inst7.a
+a[2] => ALU1:inst6.a
+a[3] => ALU1:inst10.a
+a[4] => ALU1:inst5.a
+a[5] => ALU1:inst4.a
+a[6] => ALU1:inst3.a
+a[7] => ALU1:inst2.a
+a[8] => ALU1:inst1.a
+a[9] => ALU1:inst.a
+b[0] => ALU1:inst8.b
+b[1] => ALU1:inst7.b
+b[2] => ALU1:inst6.b
+b[3] => ALU1:inst10.b
+b[4] => ALU1:inst5.b
+b[5] => ALU1:inst4.b
+b[6] => ALU1:inst3.b
+b[7] => ALU1:inst2.b
+b[8] => ALU1:inst1.b
+b[9] => ALU1:inst.b
+cin => ALU1:inst8.cin
+op[0] => ALU1:inst8.op[0]
+op[0] => ALU1:inst7.op[0]
+op[0] => ALU1:inst6.op[0]
+op[0] => ALU1:inst10.op[0]
+op[0] => ALU1:inst5.op[0]
+op[0] => ALU1:inst4.op[0]
+op[0] => ALU1:inst3.op[0]
+op[0] => ALU1:inst2.op[0]
+op[0] => ALU1:inst1.op[0]
+op[0] => ALU1:inst.op[0]
+op[1] => ALU1:inst8.op[1]
+op[1] => ALU1:inst7.op[1]
+op[1] => ALU1:inst6.op[1]
+op[1] => ALU1:inst10.op[1]
+op[1] => ALU1:inst5.op[1]
+op[1] => ALU1:inst4.op[1]
+op[1] => ALU1:inst3.op[1]
+op[1] => ALU1:inst2.op[1]
+op[1] => ALU1:inst1.op[1]
+op[1] => ALU1:inst.op[1]
+op[2] => ALU1:inst8.op[2]
+op[2] => ALU1:inst7.op[2]
+op[2] => ALU1:inst6.op[2]
+op[2] => ALU1:inst10.op[2]
+op[2] => ALU1:inst5.op[2]
+op[2] => ALU1:inst4.op[2]
+op[2] => ALU1:inst3.op[2]
+op[2] => ALU1:inst2.op[2]
+op[2] => ALU1:inst1.op[2]
+op[2] => ALU1:inst.op[2]
+r[0] <= ALU1:inst8.result
+r[1] <= ALU1:inst7.result
+r[2] <= ALU1:inst6.result
+r[3] <= ALU1:inst10.result
+r[4] <= <GND>
+r[5] <= ALU1:inst4.result
+r[6] <= ALU1:inst3.result
+r[7] <= ALU1:inst2.result
+r[8] <= ALU1:inst1.result
+r[9] <= ALU1:inst.result
+
+
+|mouse|alu10:inst13|ALU1:inst
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst13|ALU1:inst1
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst13|ALU1:inst2
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst13|ALU1:inst3
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst13|ALU1:inst4
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst13|ALU1:inst5
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst13|ALU1:inst10
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst13|ALU1:inst6
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst13|ALU1:inst7
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst13|ALU1:inst8
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|MP2X:inst10
+X0[0] => Y.DATAB
+X0[1] => Y.DATAB
+X0[2] => Y.DATAB
+X1[0] => Y.DATAA
+X1[1] => Y.DATAA
+X1[2] => Y.DATAA
+S => Y.OUTPUTSELECT
+S => Y.OUTPUTSELECT
+S => Y.OUTPUTSELECT
+Y[0] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|CONSTX:inst11
+data[0] <= <GND>
+data[1] <= <GND>
+data[2] <= <VCC>
+
+
+|mouse|CONSTX:inst12
+data[0] <= <VCC>
+data[1] <= <GND>
+data[2] <= <VCC>
+
+
+|mouse|MP2X:inst17
+X0[0] => Y.DATAB
+X0[1] => Y.DATAB
+X0[2] => Y.DATAB
+X1[0] => Y.DATAA
+X1[1] => Y.DATAA
+X1[2] => Y.DATAA
+S => Y.OUTPUTSELECT
+S => Y.OUTPUTSELECT
+S => Y.OUTPUTSELECT
+Y[0] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|CONSTX:inst18
+data[0] <= <GND>
+data[1] <= <GND>
+data[2] <= <VCC>
+
+
+|mouse|CONSTX:inst19
+data[0] <= <VCC>
+data[1] <= <GND>
+data[2] <= <VCC>
+
+
+|mouse|REGX:inst2
+clk => data[0].CLK
+clk => data[1].CLK
+clk => data[2].CLK
+clk => data[3].CLK
+clk => data[4].CLK
+clk => data[5].CLK
+clk => data[6].CLK
+clk => data[7].CLK
+clk => data[8].CLK
+clk => data[9].CLK
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+ld => data_next.OUTPUTSELECT
+cl => data_next[9].OUTPUTSELECT
+cl => data_next[8].OUTPUTSELECT
+cl => data_next[7].OUTPUTSELECT
+cl => data_next[6].OUTPUTSELECT
+cl => data_next[5].OUTPUTSELECT
+cl => data_next[4].OUTPUTSELECT
+cl => data_next[3].OUTPUTSELECT
+cl => data_next[2].OUTPUTSELECT
+cl => data_next[1].OUTPUTSELECT
+cl => data_next[0].OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+inc => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+dec => data_next.OUTPUTSELECT
+data_in[0] => data_next.DATAB
+data_in[1] => data_next.DATAB
+data_in[2] => data_next.DATAB
+data_in[3] => data_next.DATAB
+data_in[4] => data_next.DATAB
+data_in[5] => data_next.DATAB
+data_in[6] => data_next.DATAB
+data_in[7] => data_next.DATAB
+data_in[8] => data_next.DATAB
+data_in[9] => data_next.DATAB
+data_out[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= data[3].DB_MAX_OUTPUT_PORT_TYPE
+data_out[4] <= data[4].DB_MAX_OUTPUT_PORT_TYPE
+data_out[5] <= data[5].DB_MAX_OUTPUT_PORT_TYPE
+data_out[6] <= data[6].DB_MAX_OUTPUT_PORT_TYPE
+data_out[7] <= data[7].DB_MAX_OUTPUT_PORT_TYPE
+data_out[8] <= data[8].DB_MAX_OUTPUT_PORT_TYPE
+data_out[9] <= data[9].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst20
+cout <= ALU1:inst.cout
+a[0] => ALU1:inst8.a
+a[1] => ALU1:inst7.a
+a[2] => ALU1:inst6.a
+a[3] => ALU1:inst10.a
+a[4] => ALU1:inst5.a
+a[5] => ALU1:inst4.a
+a[6] => ALU1:inst3.a
+a[7] => ALU1:inst2.a
+a[8] => ALU1:inst1.a
+a[9] => ALU1:inst.a
+b[0] => ALU1:inst8.b
+b[1] => ALU1:inst7.b
+b[2] => ALU1:inst6.b
+b[3] => ALU1:inst10.b
+b[4] => ALU1:inst5.b
+b[5] => ALU1:inst4.b
+b[6] => ALU1:inst3.b
+b[7] => ALU1:inst2.b
+b[8] => ALU1:inst1.b
+b[9] => ALU1:inst.b
+cin => ALU1:inst8.cin
+op[0] => ALU1:inst8.op[0]
+op[0] => ALU1:inst7.op[0]
+op[0] => ALU1:inst6.op[0]
+op[0] => ALU1:inst10.op[0]
+op[0] => ALU1:inst5.op[0]
+op[0] => ALU1:inst4.op[0]
+op[0] => ALU1:inst3.op[0]
+op[0] => ALU1:inst2.op[0]
+op[0] => ALU1:inst1.op[0]
+op[0] => ALU1:inst.op[0]
+op[1] => ALU1:inst8.op[1]
+op[1] => ALU1:inst7.op[1]
+op[1] => ALU1:inst6.op[1]
+op[1] => ALU1:inst10.op[1]
+op[1] => ALU1:inst5.op[1]
+op[1] => ALU1:inst4.op[1]
+op[1] => ALU1:inst3.op[1]
+op[1] => ALU1:inst2.op[1]
+op[1] => ALU1:inst1.op[1]
+op[1] => ALU1:inst.op[1]
+op[2] => ALU1:inst8.op[2]
+op[2] => ALU1:inst7.op[2]
+op[2] => ALU1:inst6.op[2]
+op[2] => ALU1:inst10.op[2]
+op[2] => ALU1:inst5.op[2]
+op[2] => ALU1:inst4.op[2]
+op[2] => ALU1:inst3.op[2]
+op[2] => ALU1:inst2.op[2]
+op[2] => ALU1:inst1.op[2]
+op[2] => ALU1:inst.op[2]
+r[0] <= ALU1:inst8.result
+r[1] <= ALU1:inst7.result
+r[2] <= ALU1:inst6.result
+r[3] <= ALU1:inst10.result
+r[4] <= <GND>
+r[5] <= ALU1:inst4.result
+r[6] <= ALU1:inst3.result
+r[7] <= ALU1:inst2.result
+r[8] <= ALU1:inst1.result
+r[9] <= ALU1:inst.result
+
+
+|mouse|alu10:inst20|ALU1:inst
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst20|ALU1:inst1
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst20|ALU1:inst2
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst20|ALU1:inst3
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst20|ALU1:inst4
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst20|ALU1:inst5
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst20|ALU1:inst10
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst20|ALU1:inst6
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst20|ALU1:inst7
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mouse|alu10:inst20|ALU1:inst8
+a => result.IN0
+a => result.IN0
+a => result.IN0
+a => Mux1.IN7
+a => Mux0.IN5
+a => Mux0.IN6
+a => Mux0.IN7
+a => Mux1.IN6
+a => cout.IN0
+a => cout.IN0
+b => result.IN1
+b => result.IN1
+b => result.IN1
+b => cout.IN1
+b => cout.IN1
+cin => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+result <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+
