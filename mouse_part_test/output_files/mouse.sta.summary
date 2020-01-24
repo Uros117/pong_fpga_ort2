@@ -3,75 +3,39 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk_'
-Slack : -0.721
-TNS   : -6.363
-
-Type  : Slow 1200mV 85C Model Setup 'Lab1Demo:inst|Debouncer:inst40|inst1'
-Slack : -0.545
-TNS   : -0.716
+Slack : -2.851
+TNS   : -147.581
 
 Type  : Slow 1200mV 85C Model Hold 'clk_'
-Slack : 0.358
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'Lab1Demo:inst|Debouncer:inst40|inst1'
-Slack : 0.383
+Slack : 0.344
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_'
 Slack : -3.000
-TNS   : -18.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Lab1Demo:inst|Debouncer:inst40|inst1'
-Slack : -1.000
-TNS   : -19.000
+TNS   : -120.000
 
 Type  : Slow 1200mV 0C Model Setup 'clk_'
-Slack : -0.549
-TNS   : -4.416
-
-Type  : Slow 1200mV 0C Model Setup 'Lab1Demo:inst|Debouncer:inst40|inst1'
-Slack : -0.387
-TNS   : -0.387
+Slack : -2.430
+TNS   : -121.610
 
 Type  : Slow 1200mV 0C Model Hold 'clk_'
-Slack : 0.312
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'Lab1Demo:inst|Debouncer:inst40|inst1'
-Slack : 0.346
+Slack : 0.299
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_'
 Slack : -3.000
-TNS   : -18.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Lab1Demo:inst|Debouncer:inst40|inst1'
-Slack : -1.000
-TNS   : -19.000
+TNS   : -120.000
 
 Type  : Fast 1200mV 0C Model Setup 'clk_'
-Slack : 0.046
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'Lab1Demo:inst|Debouncer:inst40|inst1'
-Slack : 0.145
-TNS   : 0.000
+Slack : -1.130
+TNS   : -39.064
 
 Type  : Fast 1200mV 0C Model Hold 'clk_'
-Slack : 0.188
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'Lab1Demo:inst|Debouncer:inst40|inst1'
-Slack : 0.198
+Slack : 0.180
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_'
 Slack : -3.000
-TNS   : -18.840
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Lab1Demo:inst|Debouncer:inst40|inst1'
-Slack : -1.000
-TNS   : -19.000
+TNS   : -126.626
 
 ------------------------------------------------------------

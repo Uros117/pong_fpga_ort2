@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mouse
-Wed Jan 22 19:58:35 2020
+Fri Jan 24 13:51:13 2020
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -14,30 +14,42 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Parameter Settings for User Entity Instance: MouseInterface:inst3|REGX:inst3
- 12. Parameter Settings for User Entity Instance: MouseInterface:inst3|CMPX:inst29
- 13. Parameter Settings for User Entity Instance: MouseInterface:inst3|REGX:inst28
- 14. Parameter Settings for User Entity Instance: MouseInterface:inst3|CONSTX:inst30
- 15. Parameter Settings for User Entity Instance: MouseInterface:inst3|CMPX:inst31
- 16. Parameter Settings for User Entity Instance: MouseInterface:inst3|CONSTX:inst32
- 17. Parameter Settings for User Entity Instance: MouseInterface:inst3|CMPX:inst34
- 18. Parameter Settings for User Entity Instance: MouseInterface:inst3|CMPX:inst18
- 19. Parameter Settings for User Entity Instance: MouseInterface:inst3|REGX:inst17
- 20. Parameter Settings for User Entity Instance: MouseInterface:inst3|CONSTX:inst19
- 21. Parameter Settings for User Entity Instance: MouseInterface:inst3|MP2X:inst36
- 22. Parameter Settings for User Entity Instance: MouseInterface:inst3|CONSTX:inst47
- 23. Parameter Settings for User Entity Instance: REGX:inst1
- 24. Parameter Settings for User Entity Instance: MP2X:inst10
- 25. Parameter Settings for User Entity Instance: CONSTX:inst11
- 26. Parameter Settings for User Entity Instance: CONSTX:inst12
- 27. Parameter Settings for User Entity Instance: MP2X:inst17
- 28. Parameter Settings for User Entity Instance: CONSTX:inst18
- 29. Parameter Settings for User Entity Instance: CONSTX:inst19
- 30. Parameter Settings for User Entity Instance: REGX:inst2
- 31. Elapsed Time Per Partition
- 32. Analysis & Synthesis Messages
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: MouseInterface:inst|REGX:inst17
+ 13. Parameter Settings for User Entity Instance: MouseInterface:inst|CMPX:inst66
+ 14. Parameter Settings for User Entity Instance: MouseInterface:inst|REGX:packet_byte_reg
+ 15. Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|REGX:inst33
+ 16. Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|REGX:inst8
+ 17. Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|CMPX:inst85
+ 18. Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|REGX:bit_cnt
+ 19. Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|CONSTX:inst87
+ 20. Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|CMPX:inst63
+ 21. Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|REGX:Timer_reg
+ 22. Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|CMPX:inst59
+ 23. Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|CONSTX:inst60
+ 24. Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|CONSTX:inst69
+ 25. Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|REGX:inst34
+ 26. Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|REGX:inst12
+ 27. Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|CMPX:inst81
+ 28. Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|CONSTX:inst82123184
+ 29. Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|REGX:inst31
+ 30. Parameter Settings for User Entity Instance: MouseInterface:inst|REGX:inst9
+ 31. Parameter Settings for User Entity Instance: MouseInterface:inst|REGX:inst11
+ 32. Parameter Settings for User Entity Instance: MouseInterface:inst|CMPX:inst18
+ 33. Parameter Settings for User Entity Instance: MouseInterface:inst|REGX:mouse_data_reg
+ 34. Parameter Settings for User Entity Instance: MouseInterface:inst|REGX:mouse_data_int_reg53
+ 35. Parameter Settings for User Entity Instance: MouseInterface:inst|REGX:mouse_data_int_reg
+ 36. Parameter Settings for User Entity Instance: MouseInterface:inst|REGX:mouse_data_int_reg52
+ 37. Parameter Settings for User Entity Instance: CMPX:inst32
+ 38. Parameter Settings for User Entity Instance: REGX:inst22
+ 39. Parameter Settings for User Entity Instance: CLK_DIVIDER:inst4
+ 40. Parameter Settings for User Entity Instance: CONSTX:inst30
+ 41. Parameter Settings for User Entity Instance: CMPX:inst26
+ 42. Parameter Settings for User Entity Instance: CONSTX:inst27
+ 43. Elapsed Time Per Partition
+ 44. Analysis & Synthesis Messages
 
 
 
@@ -63,15 +75,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jan 22 19:58:35 2020      ;
+; Analysis & Synthesis Status        ; Successful - Fri Jan 24 13:51:13 2020      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; mouse                                      ;
 ; Top-level Entity Name              ; mouse                                      ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 40                                         ;
-;     Total combinational functions  ; 11                                         ;
-;     Dedicated logic registers      ; 34                                         ;
-; Total registers                    ; 34                                         ;
+; Total logic elements               ; 175                                        ;
+;     Total combinational functions  ; 132                                        ;
+;     Dedicated logic registers      ; 117                                        ;
+; Total registers                    ; 117                                        ;
 ; Total pins                         ; 13                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
@@ -183,118 +195,104 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                                   ; Library ;
 +----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------------------+---------+
+; MouseTransiver.bdf               ; yes             ; User Block Diagram/Schematic File        ; C:/Users/hp/Documents/GitHub/pong_fpga_ort2/mouse_part_test/MouseTransiver.bdf ;         ;
 ; RisingEdge.bdf                   ; yes             ; User Block Diagram/Schematic File        ; C:/Users/hp/Documents/GitHub/pong_fpga_ort2/mouse_part_test/RisingEdge.bdf     ;         ;
 ; REG1_INC_CL.bdf                  ; yes             ; User Block Diagram/Schematic File        ; C:/Users/hp/Documents/GitHub/pong_fpga_ort2/mouse_part_test/REG1_INC_CL.bdf    ;         ;
-; Lab1Demo.bdf                     ; yes             ; User Block Diagram/Schematic File        ; C:/Users/hp/Documents/GitHub/pong_fpga_ort2/mouse_part_test/Lab1Demo.bdf       ;         ;
 ; Debouncer.bdf                    ; yes             ; User Block Diagram/Schematic File        ; C:/Users/hp/Documents/GitHub/pong_fpga_ort2/mouse_part_test/Debouncer.bdf      ;         ;
-; alu10.bdf                        ; yes             ; User Block Diagram/Schematic File        ; C:/Users/hp/Documents/GitHub/pong_fpga_ort2/mouse_part_test/alu10.bdf          ;         ;
 ; mouse.bdf                        ; yes             ; User Block Diagram/Schematic File        ; C:/Users/hp/Documents/GitHub/pong_fpga_ort2/mouse_part_test/mouse.bdf          ;         ;
 ; MouseInterface.bdf               ; yes             ; User Block Diagram/Schematic File        ; C:/Users/hp/Documents/GitHub/pong_fpga_ort2/mouse_part_test/MouseInterface.bdf ;         ;
-; FallingEdge.bdf                  ; yes             ; User Block Diagram/Schematic File        ; C:/Users/hp/Documents/GitHub/pong_fpga_ort2/mouse_part_test/FallingEdge.bdf    ;         ;
-; dc16.bdf                         ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/hp/Documents/GitHub/pong_fpga_ort2/mouse_part_test/dc16.bdf           ;         ;
 ; regx.vhd                         ; yes             ; Auto-Found VHDL File                     ; C:/Users/hp/Documents/GitHub/pong_fpga_ort2/mouse_part_test/regx.vhd           ;         ;
 ; cmpx.vhd                         ; yes             ; Auto-Found VHDL File                     ; C:/Users/hp/Documents/GitHub/pong_fpga_ort2/mouse_part_test/cmpx.vhd           ;         ;
+; dc8.bdf                          ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/hp/Documents/GitHub/pong_fpga_ort2/mouse_part_test/dc8.bdf            ;         ;
 ; constx.vhd                       ; yes             ; Auto-Found VHDL File                     ; C:/Users/hp/Documents/GitHub/pong_fpga_ort2/mouse_part_test/constx.vhd         ;         ;
-; mp2x.vhd                         ; yes             ; Auto-Found VHDL File                     ; C:/Users/hp/Documents/GitHub/pong_fpga_ort2/mouse_part_test/mp2x.vhd           ;         ;
-; alu1.vhd                         ; yes             ; Auto-Found VHDL File                     ; C:/Users/hp/Documents/GitHub/pong_fpga_ort2/mouse_part_test/alu1.vhd           ;         ;
+; clk_divider.vhd                  ; yes             ; Auto-Found VHDL File                     ; C:/Users/hp/Documents/GitHub/pong_fpga_ort2/mouse_part_test/clk_divider.vhd    ;         ;
 +----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                        ;
-+---------------------------------------------+--------------------------------------+
-; Resource                                    ; Usage                                ;
-+---------------------------------------------+--------------------------------------+
-; Estimated Total logic elements              ; 40                                   ;
-;                                             ;                                      ;
-; Total combinational functions               ; 11                                   ;
-; Logic element usage by number of LUT inputs ;                                      ;
-;     -- 4 input functions                    ; 5                                    ;
-;     -- 3 input functions                    ; 3                                    ;
-;     -- <=2 input functions                  ; 3                                    ;
-;                                             ;                                      ;
-; Logic elements by mode                      ;                                      ;
-;     -- normal mode                          ; 11                                   ;
-;     -- arithmetic mode                      ; 0                                    ;
-;                                             ;                                      ;
-; Total registers                             ; 34                                   ;
-;     -- Dedicated logic registers            ; 34                                   ;
-;     -- I/O registers                        ; 0                                    ;
-;                                             ;                                      ;
-; I/O pins                                    ; 13                                   ;
-; Embedded Multiplier 9-bit elements          ; 0                                    ;
-; Maximum fan-out node                        ; Lab1Demo:inst|Debouncer:inst40|inst1 ;
-; Maximum fan-out                             ; 19                                   ;
-; Total fan-out                               ; 136                                  ;
-; Average fan-out                             ; 1.86                                 ;
-+---------------------------------------------+--------------------------------------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 175        ;
+;                                             ;            ;
+; Total combinational functions               ; 132        ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 43         ;
+;     -- 3 input functions                    ; 12         ;
+;     -- <=2 input functions                  ; 77         ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 99         ;
+;     -- arithmetic mode                      ; 33         ;
+;                                             ;            ;
+; Total registers                             ; 117        ;
+;     -- Dedicated logic registers            ; 117        ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 13         ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+; Maximum fan-out node                        ; clk_~input ;
+; Maximum fan-out                             ; 117        ;
+; Total fan-out                               ; 669        ;
+; Average fan-out                             ; 2.42       ;
++---------------------------------------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                               ;
-+------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+--------------+
-; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Library Name ;
-+------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+--------------+
-; |mouse                       ; 11 (0)            ; 34 (0)       ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |mouse                                                  ; work         ;
-;    |Lab1Demo:inst|           ; 11 (4)            ; 34 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|Lab1Demo:inst                                    ; work         ;
-;       |Debouncer:inst40|     ; 6 (3)             ; 5 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|Lab1Demo:inst|Debouncer:inst40                   ; work         ;
-;          |REG1_INC_CL:inst2| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|Lab1Demo:inst|Debouncer:inst40|REG1_INC_CL:inst2 ; work         ;
-;          |REG1_INC_CL:inst3| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|Lab1Demo:inst|Debouncer:inst40|REG1_INC_CL:inst3 ; work         ;
-;          |REG1_INC_CL:inst4| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|Lab1Demo:inst|Debouncer:inst40|REG1_INC_CL:inst4 ; work         ;
-;       |RisingEdge:inst29|    ; 1 (1)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|Lab1Demo:inst|RisingEdge:inst29                  ; work         ;
-+------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                               ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                ; Library Name ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+--------------+
+; |mouse                            ; 132 (3)           ; 117 (0)      ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |mouse                                                                             ; work         ;
+;    |CLK_DIVIDER:inst4|            ; 42 (42)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|CLK_DIVIDER:inst4                                                           ; work         ;
+;    |CMPX:inst32|                  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|CMPX:inst32                                                                 ; work         ;
+;    |MouseInterface:inst|          ; 75 (3)            ; 81 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst                                                         ; work         ;
+;       |CMPX:inst66|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|CMPX:inst66                                             ; work         ;
+;       |MouseTransiver:inst77|     ; 67 (14)           ; 55 (6)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|MouseTransiver:inst77                                   ; work         ;
+;          |CMPX:inst63|            ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|MouseTransiver:inst77|CMPX:inst63                       ; work         ;
+;          |DC8:inst9|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|MouseTransiver:inst77|DC8:inst9                         ; work         ;
+;          |Debouncer:inst3|        ; 5 (2)             ; 5 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|MouseTransiver:inst77|Debouncer:inst3                   ; work         ;
+;             |REG1_INC_CL:inst2|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|MouseTransiver:inst77|Debouncer:inst3|REG1_INC_CL:inst2 ; work         ;
+;             |REG1_INC_CL:inst3|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|MouseTransiver:inst77|Debouncer:inst3|REG1_INC_CL:inst3 ; work         ;
+;             |REG1_INC_CL:inst4|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|MouseTransiver:inst77|Debouncer:inst3|REG1_INC_CL:inst4 ; work         ;
+;          |Debouncer:inst4|        ; 5 (2)             ; 5 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|MouseTransiver:inst77|Debouncer:inst4                   ; work         ;
+;             |REG1_INC_CL:inst2|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|MouseTransiver:inst77|Debouncer:inst4|REG1_INC_CL:inst2 ; work         ;
+;             |REG1_INC_CL:inst3|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|MouseTransiver:inst77|Debouncer:inst4|REG1_INC_CL:inst3 ; work         ;
+;             |REG1_INC_CL:inst4|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|MouseTransiver:inst77|Debouncer:inst4|REG1_INC_CL:inst4 ; work         ;
+;          |REGX:Timer_reg|         ; 18 (18)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|MouseTransiver:inst77|REGX:Timer_reg                    ; work         ;
+;          |REGX:bit_cnt|           ; 6 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|MouseTransiver:inst77|REGX:bit_cnt                      ; work         ;
+;          |REGX:inst12|            ; 6 (6)             ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|MouseTransiver:inst77|REGX:inst12                       ; work         ;
+;          |REGX:inst31|            ; 5 (5)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|MouseTransiver:inst77|REGX:inst31                       ; work         ;
+;          |REGX:inst34|            ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|MouseTransiver:inst77|REGX:inst34                       ; work         ;
+;          |REGX:inst8|             ; 3 (3)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|MouseTransiver:inst77|REGX:inst8                        ; work         ;
+;       |REGX:inst11|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|REGX:inst11                                             ; work         ;
+;       |REGX:inst17|               ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|REGX:inst17                                             ; work         ;
+;       |REGX:inst9|                ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|REGX:inst9                                              ; work         ;
+;       |REGX:mouse_data_int_reg52| ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|REGX:mouse_data_int_reg52                               ; work         ;
+;       |REGX:mouse_data_int_reg53| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|REGX:mouse_data_int_reg53                               ; work         ;
+;       |REGX:mouse_data_int_reg|   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|REGX:mouse_data_int_reg                                 ; work         ;
+;       |REGX:mouse_data_reg|       ; 0 (0)             ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|REGX:mouse_data_reg                                     ; work         ;
+;       |REGX:packet_byte_reg|      ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|REGX:packet_byte_reg                                    ; work         ;
+;       |RisingEdge:inst5|          ; 1 (1)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|MouseInterface:inst|RisingEdge:inst5                                        ; work         ;
+;    |REGX:inst22|                  ; 10 (10)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|REGX:inst22                                                                 ; work         ;
+;    |RisingEdge:inst13|            ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|RisingEdge:inst13                                                           ; work         ;
+;    |RisingEdge:inst3|             ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mouse|RisingEdge:inst3                                                            ; work         ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                         ;
-+--------------------------------------------------------------+---------------------------------------------+
-; Register name                                                ; Reason for Removal                          ;
-+--------------------------------------------------------------+---------------------------------------------+
-; MouseInterface:inst3|inst15                                  ; Stuck at VCC due to stuck port preset       ;
-; MouseInterface:inst3|inst14                                  ; Lost fanout                                 ;
-; MouseInterface:inst3|inst13                                  ; Lost fanout                                 ;
-; MouseInterface:inst3|inst12                                  ; Lost fanout                                 ;
-; MouseInterface:inst3|inst11                                  ; Lost fanout                                 ;
-; MouseInterface:inst3|inst10                                  ; Lost fanout                                 ;
-; MouseInterface:inst3|inst9                                   ; Lost fanout                                 ;
-; MouseInterface:inst3|inst8                                   ; Lost fanout                                 ;
-; MouseInterface:inst3|inst5                                   ; Lost fanout                                 ;
-; MouseInterface:inst3|inst4                                   ; Lost fanout                                 ;
-; MouseInterface:inst3|RisingEdge:inst41|inst1                 ; Lost fanout                                 ;
-; MouseInterface:inst3|RisingEdge:inst41|inst                  ; Lost fanout                                 ;
-; MouseInterface:inst3|Debouncer:inst40|inst1                  ; Lost fanout                                 ;
-; MouseInterface:inst3|inst16                                  ; Stuck at GND due to stuck port clock_enable ;
-; MouseInterface:inst3|REGX:inst17|data[0..3]                  ; Lost fanout                                 ;
-; MouseInterface:inst3|Debouncer:inst40|inst                   ; Lost fanout                                 ;
-; MouseInterface:inst3|Debouncer:inst40|REG1_INC_CL:inst4|inst ; Lost fanout                                 ;
-; MouseInterface:inst3|Debouncer:inst40|REG1_INC_CL:inst3|inst ; Lost fanout                                 ;
-; MouseInterface:inst3|Debouncer:inst40|REG1_INC_CL:inst2|inst ; Lost fanout                                 ;
-; MouseInterface:inst3|REGX:inst28|data[0..12]                 ; Lost fanout                                 ;
-; MouseInterface:inst3|REGX:inst3|data[0..3]                   ; Lost fanout                                 ;
-; Lab1Demo:inst|inst16                                         ; Merged with Lab1Demo:inst|inst1             ;
-; Total Number of Removed Registers = 40                       ;                                             ;
-+--------------------------------------------------------------+---------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                    ;
-+----------------------------------------------+--------------------------+--------------------------------------------------------------------------------------+
-; Register name                                ; Reason for Removal       ; Registers Removed due to This Register                                               ;
-+----------------------------------------------+--------------------------+--------------------------------------------------------------------------------------+
-; MouseInterface:inst3|inst15                  ; Stuck at VCC             ; MouseInterface:inst3|inst14, MouseInterface:inst3|inst13,                            ;
-;                                              ; due to stuck port preset ; MouseInterface:inst3|inst12, MouseInterface:inst3|inst11,                            ;
-;                                              ;                          ; MouseInterface:inst3|inst10, MouseInterface:inst3|inst9, MouseInterface:inst3|inst8, ;
-;                                              ;                          ; MouseInterface:inst3|inst5, MouseInterface:inst3|inst4, MouseInterface:inst3|inst16, ;
-;                                              ;                          ; MouseInterface:inst3|REGX:inst3|data[1], MouseInterface:inst3|REGX:inst3|data[0],    ;
-;                                              ;                          ; MouseInterface:inst3|REGX:inst3|data[2], MouseInterface:inst3|REGX:inst3|data[3]     ;
-; MouseInterface:inst3|RisingEdge:inst41|inst1 ; Lost Fanouts             ; MouseInterface:inst3|RisingEdge:inst41|inst,                                         ;
-;                                              ;                          ; MouseInterface:inst3|Debouncer:inst40|inst1,                                         ;
-;                                              ;                          ; MouseInterface:inst3|Debouncer:inst40|inst,                                          ;
-;                                              ;                          ; MouseInterface:inst3|Debouncer:inst40|REG1_INC_CL:inst4|inst,                        ;
-;                                              ;                          ; MouseInterface:inst3|Debouncer:inst40|REG1_INC_CL:inst3|inst,                        ;
-;                                              ;                          ; MouseInterface:inst3|Debouncer:inst40|REG1_INC_CL:inst2|inst                         ;
-+----------------------------------------------+--------------------------+--------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++--------------------------------------------------------------+--------------------+
+; Register name                                                ; Reason for Removal ;
++--------------------------------------------------------------+--------------------+
+; REGX:inst22|data[8..20,22,23]                                ; Lost fanout        ;
+; MouseInterface:inst|REGX:mouse_data_int_reg|data[0..4,6,7]   ; Lost fanout        ;
+; MouseInterface:inst|REGX:mouse_data_int_reg53|data[0..4,6,7] ; Lost fanout        ;
+; MouseInterface:inst|REGX:mouse_data_reg|data[8..20,22,23]    ; Lost fanout        ;
+; Total Number of Removed Registers = 44                       ;                    ;
++--------------------------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -302,226 +300,387 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 34    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 117   ;
+; Number of registers using Synchronous Clear  ; 13    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 9     ;
+; Number of registers using Clock Enable       ; 66    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
++--------------------------------------------------------------------------+
+; Inverted Register Statistics                                             ;
++----------------------------------------------------------------+---------+
+; Inverted Register                                              ; Fan out ;
++----------------------------------------------------------------+---------+
+; CLK_DIVIDER:inst4|cnt[21]                                      ; 1       ;
+; CLK_DIVIDER:inst4|cnt[18]                                      ; 1       ;
+; CLK_DIVIDER:inst4|cnt[17]                                      ; 1       ;
+; CLK_DIVIDER:inst4|cnt[13]                                      ; 1       ;
+; CLK_DIVIDER:inst4|cnt[10]                                      ; 1       ;
+; CLK_DIVIDER:inst4|cnt[8]                                       ; 1       ;
+; CLK_DIVIDER:inst4|cnt[7]                                       ; 1       ;
+; CLK_DIVIDER:inst4|cnt[4]                                       ; 1       ;
+; CLK_DIVIDER:inst4|cnt[3]                                       ; 1       ;
+; CLK_DIVIDER:inst4|cnt[2]                                       ; 1       ;
+; CLK_DIVIDER:inst4|cnt[1]                                       ; 1       ;
+; CLK_DIVIDER:inst4|cnt[0]                                       ; 1       ;
+; MouseInterface:inst|REGX:inst9|data[0]                         ; 8       ;
+; MouseInterface:inst|MouseTransiver:inst77|REGX:inst12|data[3]  ; 2       ;
+; MouseInterface:inst|MouseTransiver:inst77|REGX:inst12|data[5]  ; 2       ;
+; MouseInterface:inst|MouseTransiver:inst77|REGX:inst12|data[6]  ; 2       ;
+; MouseInterface:inst|MouseTransiver:inst77|REGX:inst12|data[7]  ; 2       ;
+; MouseInterface:inst|MouseTransiver:inst77|REGX:inst12|data[8]  ; 2       ;
+; MouseInterface:inst|MouseTransiver:inst77|REGX:inst12|data[10] ; 1       ;
+; Total number of inverted registers = 19                        ;         ;
++----------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mouse|MouseInterface:inst|REGX:packet_byte_reg|data[0]                 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mouse|MouseInterface:inst|MouseTransiver:inst77|REGX:inst8|data[1]     ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |mouse|MouseInterface:inst|MouseTransiver:inst77|REGX:bit_cnt|data[1]   ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |mouse|MouseInterface:inst|MouseTransiver:inst77|REGX:Timer_reg|data[6] ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |mouse|REGX:inst22|data[1]                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+
+
 +------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MouseInterface:inst3|REGX:inst3 ;
+; Parameter Settings for User Entity Instance: MouseInterface:inst|REGX:inst17 ;
 +----------------+-------+-----------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                ;
 +----------------+-------+-----------------------------------------------------+
-; size           ; 4     ; Signed Integer                                      ;
+; size           ; 1     ; Signed Integer                                      ;
 ; default_value  ; 0     ; Signed Integer                                      ;
 +----------------+-------+-----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MouseInterface:inst3|CMPX:inst29 ;
-+----------------+-------+------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                 ;
-+----------------+-------+------------------------------------------------------+
-; size           ; 13    ; Signed Integer                                       ;
-+----------------+-------+------------------------------------------------------+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|CMPX:inst66 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; size           ; 2     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MouseInterface:inst3|REGX:inst28 ;
-+----------------+-------+------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                 ;
-+----------------+-------+------------------------------------------------------+
-; size           ; 13    ; Signed Integer                                       ;
-; default_value  ; 0     ; Signed Integer                                       ;
-+----------------+-------+------------------------------------------------------+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|REGX:packet_byte_reg ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; size           ; 2     ; Signed Integer                                               ;
+; default_value  ; 0     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MouseInterface:inst3|CONSTX:inst30 ;
-+----------------+-------+--------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                   ;
-+----------------+-------+--------------------------------------------------------+
-; size           ; 13    ; Signed Integer                                         ;
-; const          ; 6000  ; Signed Integer                                         ;
-+----------------+-------+--------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|REGX:inst33 ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                            ;
+; default_value  ; 0     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MouseInterface:inst3|CMPX:inst31 ;
-+----------------+-------+------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                 ;
-+----------------+-------+------------------------------------------------------+
-; size           ; 13    ; Signed Integer                                       ;
-+----------------+-------+------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|REGX:inst8 ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; size           ; 2     ; Signed Integer                                                           ;
+; default_value  ; 0     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MouseInterface:inst3|CONSTX:inst32 ;
-+----------------+-------+--------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                   ;
-+----------------+-------+--------------------------------------------------------+
-; size           ; 13    ; Signed Integer                                         ;
-; const          ; 6000  ; Signed Integer                                         ;
-+----------------+-------+--------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|CMPX:inst85 ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; size           ; 4     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MouseInterface:inst3|CMPX:inst34 ;
-+----------------+-------+------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                 ;
-+----------------+-------+------------------------------------------------------+
-; size           ; 13    ; Signed Integer                                       ;
-+----------------+-------+------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|REGX:bit_cnt ;
++----------------+-------+----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                       ;
++----------------+-------+----------------------------------------------------------------------------+
+; size           ; 4     ; Signed Integer                                                             ;
+; default_value  ; 0     ; Signed Integer                                                             ;
++----------------+-------+----------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MouseInterface:inst3|CMPX:inst18 ;
-+----------------+-------+------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                 ;
-+----------------+-------+------------------------------------------------------+
-; size           ; 4     ; Signed Integer                                       ;
-+----------------+-------+------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|CONSTX:inst87 ;
++----------------+-------+-----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------+
+; size           ; 4     ; Signed Integer                                                              ;
+; const          ; 11    ; Signed Integer                                                              ;
++----------------+-------+-----------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MouseInterface:inst3|REGX:inst17 ;
-+----------------+-------+------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                 ;
-+----------------+-------+------------------------------------------------------+
-; size           ; 4     ; Signed Integer                                       ;
-; default_value  ; 0     ; Signed Integer                                       ;
-+----------------+-------+------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|CMPX:inst63 ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; size           ; 13    ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MouseInterface:inst3|CONSTX:inst19 ;
-+----------------+-------+--------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                   ;
-+----------------+-------+--------------------------------------------------------+
-; size           ; 4     ; Signed Integer                                         ;
-; const          ; 12    ; Signed Integer                                         ;
-+----------------+-------+--------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|REGX:Timer_reg ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; size           ; 13    ; Signed Integer                                                               ;
+; default_value  ; 0     ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MouseInterface:inst3|MP2X:inst36 ;
-+----------------+-------+------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                 ;
-+----------------+-------+------------------------------------------------------+
-; size           ; 1     ; Signed Integer                                       ;
-+----------------+-------+------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|CMPX:inst59 ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; size           ; 13    ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MouseInterface:inst3|CONSTX:inst47 ;
-+----------------+-------+--------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                   ;
-+----------------+-------+--------------------------------------------------------+
-; size           ; 13    ; Signed Integer                                         ;
-; const          ; 200   ; Signed Integer                                         ;
-+----------------+-------+--------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|CONSTX:inst60 ;
++----------------+-------+-----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------+
+; size           ; 13    ; Signed Integer                                                              ;
+; const          ; 2800  ; Signed Integer                                                              ;
++----------------+-------+-----------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REGX:inst1 ;
-+----------------+-------+--------------------------------+
-; Parameter Name ; Value ; Type                           ;
-+----------------+-------+--------------------------------+
-; size           ; 10    ; Signed Integer                 ;
-; default_value  ; 300   ; Signed Integer                 ;
-+----------------+-------+--------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|CONSTX:inst69 ;
++----------------+-------+-----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------+
+; size           ; 13    ; Signed Integer                                                              ;
+; const          ; 5000  ; Signed Integer                                                              ;
++----------------+-------+-----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|REGX:inst34 ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                            ;
+; default_value  ; 0     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|REGX:inst12 ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; size           ; 11    ; Signed Integer                                                            ;
+; default_value  ; 1512  ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|CMPX:inst81 ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; size           ; 4     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|CONSTX:inst82123184 ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; size           ; 4     ; Signed Integer                                                                    ;
+; const          ; 10    ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|MouseTransiver:inst77|REGX:inst31 ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; size           ; 8     ; Signed Integer                                                            ;
+; default_value  ; 0     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|REGX:inst9 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; size           ; 1     ; Signed Integer                                     ;
+; default_value  ; 1     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|REGX:inst11 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; size           ; 1     ; Signed Integer                                      ;
+; default_value  ; 0     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|CMPX:inst18 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; size           ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|REGX:mouse_data_reg ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; size           ; 24    ; Signed Integer                                              ;
+; default_value  ; 0     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|REGX:mouse_data_int_reg53 ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; size           ; 8     ; Signed Integer                                                    ;
+; default_value  ; 0     ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|REGX:mouse_data_int_reg ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; size           ; 8     ; Signed Integer                                                  ;
+; default_value  ; 0     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MouseInterface:inst|REGX:mouse_data_int_reg52 ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; size           ; 8     ; Signed Integer                                                    ;
+; default_value  ; 0     ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MP2X:inst10 ;
+; Parameter Settings for User Entity Instance: CMPX:inst32 ;
 +----------------+-------+---------------------------------+
 ; Parameter Name ; Value ; Type                            ;
 +----------------+-------+---------------------------------+
-; size           ; 3     ; Signed Integer                  ;
+; size           ; 8     ; Signed Integer                  ;
 +----------------+-------+---------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: CONSTX:inst11 ;
-+----------------+-------+-----------------------------------+
-; Parameter Name ; Value ; Type                              ;
-+----------------+-------+-----------------------------------+
-; size           ; 3     ; Signed Integer                    ;
-; const          ; 4     ; Signed Integer                    ;
-+----------------+-------+-----------------------------------+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: REGX:inst22 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; size           ; 24    ; Signed Integer                  ;
+; default_value  ; 0     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CLK_DIVIDER:inst4 ;
++-------------------+-------+------------------------------------+
+; Parameter Name    ; Value ; Type                               ;
++-------------------+-------+------------------------------------+
+; period_inmhz      ; 50    ; Signed Integer                     ;
+; period_outmilisec ; 100   ; Signed Integer                     ;
++-------------------+-------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: CONSTX:inst12 ;
+; Parameter Settings for User Entity Instance: CONSTX:inst30 ;
 +----------------+-------+-----------------------------------+
 ; Parameter Name ; Value ; Type                              ;
 +----------------+-------+-----------------------------------+
-; size           ; 3     ; Signed Integer                    ;
-; const          ; 5     ; Signed Integer                    ;
+; size           ; 8     ; Signed Integer                    ;
+; const          ; 0     ; Signed Integer                    ;
 +----------------+-------+-----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MP2X:inst17 ;
+; Parameter Settings for User Entity Instance: CMPX:inst26 ;
 +----------------+-------+---------------------------------+
 ; Parameter Name ; Value ; Type                            ;
 +----------------+-------+---------------------------------+
-; size           ; 3     ; Signed Integer                  ;
+; size           ; 8     ; Signed Integer                  ;
 +----------------+-------+---------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: CONSTX:inst18 ;
+; Parameter Settings for User Entity Instance: CONSTX:inst27 ;
 +----------------+-------+-----------------------------------+
 ; Parameter Name ; Value ; Type                              ;
 +----------------+-------+-----------------------------------+
-; size           ; 3     ; Signed Integer                    ;
-; const          ; 4     ; Signed Integer                    ;
+; size           ; 8     ; Signed Integer                    ;
+; const          ; 0     ; Signed Integer                    ;
 +----------------+-------+-----------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: CONSTX:inst19 ;
-+----------------+-------+-----------------------------------+
-; Parameter Name ; Value ; Type                              ;
-+----------------+-------+-----------------------------------+
-; size           ; 3     ; Signed Integer                    ;
-; const          ; 5     ; Signed Integer                    ;
-+----------------+-------+-----------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REGX:inst2 ;
-+----------------+-------+--------------------------------+
-; Parameter Name ; Value ; Type                           ;
-+----------------+-------+--------------------------------+
-; size           ; 10    ; Signed Integer                 ;
-; default_value  ; 300   ; Signed Integer                 ;
-+----------------+-------+--------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -540,9 +699,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Wed Jan 22 19:58:33 2020
+    Info: Processing started: Fri Jan 24 13:51:10 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mouse -c mouse
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file mousetransiver.bdf
+    Info (12023): Found entity 1: MouseTransiver
 Info (12021): Found 1 design units, including 1 entities, in source file risingedge.bdf
     Info (12023): Found entity 1: RisingEdge
 Info (12021): Found 1 design units, including 1 entities, in source file reg1_inc_cl.bdf
@@ -562,64 +723,73 @@ Info (12021): Found 1 design units, including 1 entities, in source file mousein
 Info (12021): Found 1 design units, including 1 entities, in source file fallingedge.bdf
     Info (12023): Found entity 1: FallingEdge
 Info (12127): Elaborating entity "mouse" for the top level hierarchy
-Info (12128): Elaborating entity "MouseInterface" for hierarchy "MouseInterface:inst3"
-Warning (275009): Pin "mouse_write" not connected
-Warning (275008): Primitive "WIRE" of instance "inst26" not used
-Warning (12125): Using design file dc16.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: DC16
-Info (12128): Elaborating entity "DC16" for hierarchy "MouseInterface:inst3|DC16:inst1"
+Warning (275008): Primitive "AND2" of instance "inst1" not used
+Warning (275008): Primitive "AND2" of instance "inst17" not used
+Warning (275008): Primitive "NOT" of instance "inst28" not used
+Warning (275008): Primitive "NOT" of instance "inst31" not used
+Info (12128): Elaborating entity "MouseInterface" for hierarchy "MouseInterface:inst"
+Warning (275008): Primitive "NOT" of instance "inst30" not used
 Warning (12125): Using design file regx.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: REGX-rtl
     Info (12023): Found entity 1: REGX
-Info (12128): Elaborating entity "REGX" for hierarchy "MouseInterface:inst3|REGX:inst3"
+Info (12128): Elaborating entity "REGX" for hierarchy "MouseInterface:inst|REGX:inst17"
 Warning (12125): Using design file cmpx.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: CMPX-rtl
     Info (12023): Found entity 1: CMPX
-Info (12128): Elaborating entity "CMPX" for hierarchy "MouseInterface:inst3|CMPX:inst29"
-Info (12128): Elaborating entity "REGX" for hierarchy "MouseInterface:inst3|REGX:inst28"
+Info (12128): Elaborating entity "CMPX" for hierarchy "MouseInterface:inst|CMPX:inst66"
+Info (12128): Elaborating entity "REGX" for hierarchy "MouseInterface:inst|REGX:packet_byte_reg"
+Info (12128): Elaborating entity "RisingEdge" for hierarchy "MouseInterface:inst|RisingEdge:inst5"
+Info (12128): Elaborating entity "MouseTransiver" for hierarchy "MouseInterface:inst|MouseTransiver:inst77"
+Warning (275009): Pin "tx_cmd" not connected
+Warning (275008): Primitive "NOT" of instance "inst71" not used
+Warning (12125): Using design file dc8.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: DC8
+Info (12128): Elaborating entity "DC8" for hierarchy "MouseInterface:inst|MouseTransiver:inst77|DC8:inst9"
+Info (12128): Elaborating entity "Debouncer" for hierarchy "MouseInterface:inst|MouseTransiver:inst77|Debouncer:inst3"
+Info (12128): Elaborating entity "REG1_INC_CL" for hierarchy "MouseInterface:inst|MouseTransiver:inst77|Debouncer:inst3|REG1_INC_CL:inst2"
+Info (12128): Elaborating entity "CMPX" for hierarchy "MouseInterface:inst|MouseTransiver:inst77|CMPX:inst85"
+Info (12128): Elaborating entity "REGX" for hierarchy "MouseInterface:inst|MouseTransiver:inst77|REGX:bit_cnt"
 Warning (12125): Using design file constx.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: CONSTX-rtl
     Info (12023): Found entity 1: CONSTX
-Info (12128): Elaborating entity "CONSTX" for hierarchy "MouseInterface:inst3|CONSTX:inst30"
-Info (12128): Elaborating entity "RisingEdge" for hierarchy "MouseInterface:inst3|RisingEdge:inst41"
-Info (12128): Elaborating entity "Debouncer" for hierarchy "MouseInterface:inst3|Debouncer:inst40"
-Info (12128): Elaborating entity "REG1_INC_CL" for hierarchy "MouseInterface:inst3|Debouncer:inst40|REG1_INC_CL:inst2"
-Info (12128): Elaborating entity "CMPX" for hierarchy "MouseInterface:inst3|CMPX:inst18"
-Info (12128): Elaborating entity "CONSTX" for hierarchy "MouseInterface:inst3|CONSTX:inst19"
-Warning (12125): Using design file mp2x.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: MP2X-rtl
-    Info (12023): Found entity 1: MP2X
-Info (12128): Elaborating entity "MP2X" for hierarchy "MouseInterface:inst3|MP2X:inst36"
-Info (12128): Elaborating entity "FallingEdge" for hierarchy "MouseInterface:inst3|FallingEdge:inst"
-Info (12128): Elaborating entity "CONSTX" for hierarchy "MouseInterface:inst3|CONSTX:inst47"
-Info (12128): Elaborating entity "Lab1Demo" for hierarchy "Lab1Demo:inst"
-Warning (275008): Primitive "DFF" of instance "inst25" not used
-Warning (275008): Primitive "DFFE" of instance "inst28" not used
-Warning (275008): Primitive "DFFE" of instance "inst38" not used
-Info (12128): Elaborating entity "REGX" for hierarchy "REGX:inst1"
-Info (12128): Elaborating entity "alu10" for hierarchy "alu10:inst13"
-Warning (12125): Using design file alu1.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: ALU1-rtl
-    Info (12023): Found entity 1: ALU1
-Info (12128): Elaborating entity "ALU1" for hierarchy "alu10:inst13|ALU1:inst"
-Info (12128): Elaborating entity "MP2X" for hierarchy "MP2X:inst10"
-Info (12128): Elaborating entity "CONSTX" for hierarchy "CONSTX:inst11"
-Info (12128): Elaborating entity "CONSTX" for hierarchy "CONSTX:inst12"
-Warning (18029): Output pin "led[0]" driven by bidirectional pin "ps2clk" cannot be tri-stated
-Warning (18029): Output pin "led[1]" driven by bidirectional pin "ps2data" cannot be tri-stated
+Info (12128): Elaborating entity "CONSTX" for hierarchy "MouseInterface:inst|MouseTransiver:inst77|CONSTX:inst87"
+Info (12128): Elaborating entity "CMPX" for hierarchy "MouseInterface:inst|MouseTransiver:inst77|CMPX:inst63"
+Info (12128): Elaborating entity "REGX" for hierarchy "MouseInterface:inst|MouseTransiver:inst77|REGX:Timer_reg"
+Info (12128): Elaborating entity "CONSTX" for hierarchy "MouseInterface:inst|MouseTransiver:inst77|CONSTX:inst60"
+Info (12128): Elaborating entity "CONSTX" for hierarchy "MouseInterface:inst|MouseTransiver:inst77|CONSTX:inst69"
+Info (12128): Elaborating entity "REGX" for hierarchy "MouseInterface:inst|MouseTransiver:inst77|REGX:inst12"
+Info (12128): Elaborating entity "CONSTX" for hierarchy "MouseInterface:inst|MouseTransiver:inst77|CONSTX:inst82123184"
+Info (12128): Elaborating entity "REGX" for hierarchy "MouseInterface:inst|MouseTransiver:inst77|REGX:inst31"
+Info (12128): Elaborating entity "REGX" for hierarchy "MouseInterface:inst|REGX:inst9"
+Info (12128): Elaborating entity "CMPX" for hierarchy "MouseInterface:inst|CMPX:inst18"
+Info (12128): Elaborating entity "REGX" for hierarchy "MouseInterface:inst|REGX:mouse_data_reg"
+Warning (12125): Using design file clk_divider.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: CLK_DIVIDER-rtl
+    Info (12023): Found entity 1: CLK_DIVIDER
+Info (12128): Elaborating entity "CLK_DIVIDER" for hierarchy "CLK_DIVIDER:inst4"
+Info (12128): Elaborating entity "CONSTX" for hierarchy "CONSTX:inst30"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "led[9]" is stuck at GND
+    Warning (13410): Pin "led[8]" is stuck at GND
+    Warning (13410): Pin "led[7]" is stuck at GND
+    Warning (13410): Pin "led[6]" is stuck at GND
+    Warning (13410): Pin "led[5]" is stuck at GND
+    Warning (13410): Pin "led[4]" is stuck at GND
+    Warning (13410): Pin "led[3]" is stuck at GND
+    Warning (13410): Pin "led[2]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 37 registers lost all their fanouts during netlist optimizations.
+Info (17049): 44 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 53 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 199 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 10 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 40 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 4662 megabytes
-    Info: Processing ended: Wed Jan 22 19:58:35 2020
-    Info: Elapsed time: 00:00:02
+    Info (21061): Implemented 186 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 22 warnings
+    Info: Peak virtual memory: 4666 megabytes
+    Info: Processing ended: Fri Jan 24 13:51:13 2020
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 

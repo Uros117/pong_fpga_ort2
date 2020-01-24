@@ -47,14 +47,8 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
-set_global_assignment -name BDF_FILE RisingEdge.bdf
-set_global_assignment -name BDF_FILE REG1_INC_CL.bdf
-set_global_assignment -name BDF_FILE Lab1Demo.bdf
-set_global_assignment -name BDF_FILE Debouncer.bdf
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name BDF_FILE alu10.bdf
-set_global_assignment -name BDF_FILE mouse.bdf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -71,10 +65,17 @@ set_location_assignment PIN_J3 -to led[2]
 set_location_assignment PIN_J2 -to led[1]
 set_location_assignment PIN_J1 -to led[0]
 set_location_assignment PIN_G21 -to clk_
-set_global_assignment -name BDF_FILE reg8.bdf
-set_global_assignment -name BDF_FILE MouseInterface.bdf
 set_location_assignment PIN_P22 -to ps2clk
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name BDF_FILE MouseTransiver.bdf
+set_global_assignment -name BDF_FILE RisingEdge.bdf
+set_global_assignment -name BDF_FILE REG1_INC_CL.bdf
+set_global_assignment -name BDF_FILE Lab1Demo.bdf
+set_global_assignment -name BDF_FILE Debouncer.bdf
+set_global_assignment -name BDF_FILE alu10.bdf
+set_global_assignment -name BDF_FILE mouse.bdf
+set_global_assignment -name BDF_FILE reg8.bdf
+set_global_assignment -name BDF_FILE MouseInterface.bdf
 set_global_assignment -name BDF_FILE FallingEdge.bdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
