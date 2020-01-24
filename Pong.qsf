@@ -46,7 +46,6 @@ set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
-set_global_assignment -name BDF_FILE Pong.bdf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -77,17 +76,8 @@ set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
 set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
-set_global_assignment -name BDF_FILE output_files/KeyDetector.bdf
-set_global_assignment -name BDF_FILE KeyDetector.bdf
-set_global_assignment -name BDF_FILE Player1.bdf
-set_global_assignment -name BDF_FILE MP4X.bdf
 set_location_assignment PIN_R21 -to PS2_CLK
 set_location_assignment PIN_R22 -to PS2_DATA
-set_global_assignment -name BDF_FILE Ball.bdf
-set_global_assignment -name BDF_FILE Player2.bdf
-set_global_assignment -name BDF_FILE Winner.bdf
-set_global_assignment -name BDF_FILE Winner2.bdf
-set_global_assignment -name BDF_FILE 7segments.bdf
 set_location_assignment PIN_A18 -to P1dot
 set_location_assignment PIN_D15 -to P1segment0
 set_location_assignment PIN_A16 -to P1segment1
@@ -104,4 +94,21 @@ set_location_assignment PIN_H13 -to P2segment3
 set_location_assignment PIN_G12 -to P2segment4
 set_location_assignment PIN_F12 -to P2segment5
 set_location_assignment PIN_F13 -to P2segment6
+set_global_assignment -name BDF_FILE MouseTransiver.bdf
+set_global_assignment -name BDF_FILE MouseInterface.bdf
+set_global_assignment -name BDF_FILE mouse.bdf
+set_global_assignment -name BDF_FILE Pong.bdf
+set_global_assignment -name BDF_FILE output_files/KeyDetector.bdf
+set_global_assignment -name BDF_FILE KeyDetector.bdf
+set_global_assignment -name BDF_FILE Player1.bdf
+set_global_assignment -name BDF_FILE MP4X.bdf
+set_global_assignment -name BDF_FILE Ball.bdf
+set_global_assignment -name BDF_FILE Player2.bdf
+set_global_assignment -name BDF_FILE Winner.bdf
+set_global_assignment -name BDF_FILE Winner2.bdf
+set_global_assignment -name BDF_FILE 7segments.bdf
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_P22 -to ps2_clk_mouse
+set_location_assignment PIN_P21 -to ps2_data_mouse
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -3,32 +3,32 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'CLK'
-Slack : -3.605
-TNS   : -688.375
+Slack : -3.793
+TNS   : -947.828
 
 Type  : Slow 1200mV 85C Model Setup 'KeyboardInterface:inst5|Debouncer:inst40|inst1'
-Slack : -0.548
-TNS   : -1.579
+Slack : -0.641
+TNS   : -0.803
 
 Type  : Slow 1200mV 85C Model Setup 'Ball:inst33|inst13'
 Slack : 0.318
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'CLK'
-Slack : -0.060
-TNS   : -0.085
+Slack : -0.118
+TNS   : -0.981
+
+Type  : Slow 1200mV 85C Model Hold 'KeyboardInterface:inst5|Debouncer:inst40|inst1'
+Slack : 0.380
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'Ball:inst33|inst13'
 Slack : 0.385
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'KeyboardInterface:inst5|Debouncer:inst40|inst1'
-Slack : 0.396
-TNS   : 0.000
-
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
-TNS   : -264.000
+TNS   : -390.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'KeyboardInterface:inst5|Debouncer:inst40|inst1'
 Slack : -1.000
@@ -39,32 +39,32 @@ Slack : -1.000
 TNS   : -1.000
 
 Type  : Slow 1200mV 0C Model Setup 'CLK'
-Slack : -3.201
-TNS   : -593.187
+Slack : -3.339
+TNS   : -815.053
 
 Type  : Slow 1200mV 0C Model Setup 'KeyboardInterface:inst5|Debouncer:inst40|inst1'
-Slack : -0.388
-TNS   : -0.666
+Slack : -0.494
+TNS   : -0.494
 
 Type  : Slow 1200mV 0C Model Setup 'Ball:inst33|inst13'
 Slack : 0.398
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'CLK'
-Slack : -0.062
-TNS   : -0.126
+Slack : -0.124
+TNS   : -1.240
 
 Type  : Slow 1200mV 0C Model Hold 'Ball:inst33|inst13'
 Slack : 0.341
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'KeyboardInterface:inst5|Debouncer:inst40|inst1'
-Slack : 0.359
+Slack : 0.344
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
-TNS   : -264.000
+TNS   : -390.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'KeyboardInterface:inst5|Debouncer:inst40|inst1'
 Slack : -1.000
@@ -75,11 +75,11 @@ Slack : -1.000
 TNS   : -1.000
 
 Type  : Fast 1200mV 0C Model Setup 'CLK'
-Slack : -1.616
-TNS   : -285.132
+Slack : -1.777
+TNS   : -381.185
 
 Type  : Fast 1200mV 0C Model Setup 'KeyboardInterface:inst5|Debouncer:inst40|inst1'
-Slack : 0.147
+Slack : 0.091
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'Ball:inst33|inst13'
@@ -87,20 +87,20 @@ Slack : 0.626
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'CLK'
-Slack : -0.159
-TNS   : -3.381
+Slack : -0.175
+TNS   : -4.635
+
+Type  : Fast 1200mV 0C Model Hold 'KeyboardInterface:inst5|Debouncer:inst40|inst1'
+Slack : 0.198
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'Ball:inst33|inst13'
 Slack : 0.208
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'KeyboardInterface:inst5|Debouncer:inst40|inst1'
-Slack : 0.208
-TNS   : 0.000
-
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
-TNS   : -280.220
+TNS   : -412.525
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'KeyboardInterface:inst5|Debouncer:inst40|inst1'
 Slack : -1.000

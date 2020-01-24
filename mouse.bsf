@@ -1,0 +1,113 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 168 240)
+	(text "mouse" (rect 5 0 51 16)(font "Arial" (font_size 8)))
+	(text "inst" (rect 8 205 31 220)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk_" (rect 0 0 28 16)(font "Arial" (font_size 8)))
+		(text "clk_" (rect 21 27 49 43)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 152 64)
+		(output)
+		(text "left_click" (rect 0 0 60 16)(font "Arial" (font_size 8)))
+		(text "left_click" (rect 71 59 131 75)(font "Arial" (font_size 8)))
+		(line (pt 152 64)(pt 136 64))
+	)
+	(port
+		(pt 152 80)
+		(output)
+		(text "right_click" (rect 0 0 69 16)(font "Arial" (font_size 8)))
+		(text "right_click" (rect 62 75 131 91)(font "Arial" (font_size 8)))
+		(line (pt 152 80)(pt 136 80))
+	)
+	(port
+		(pt 152 96)
+		(output)
+		(text "vx[8..0]" (rect 0 0 49 16)(font "Arial" (font_size 8)))
+		(text "vx[8..0]" (rect 82 91 131 107)(font "Arial" (font_size 8)))
+		(line (pt 152 96)(pt 136 96)(line_width 3))
+	)
+	(port
+		(pt 152 112)
+		(output)
+		(text "vy[8..0]" (rect 0 0 49 16)(font "Arial" (font_size 8)))
+		(text "vy[8..0]" (rect 82 107 131 123)(font "Arial" (font_size 8)))
+		(line (pt 152 112)(pt 136 112)(line_width 3))
+	)
+	(port
+		(pt 152 128)
+		(output)
+		(text "left" (rect 0 0 20 16)(font "Arial" (font_size 8)))
+		(text "left" (rect 111 123 131 139)(font "Arial" (font_size 8)))
+		(line (pt 152 128)(pt 136 128))
+	)
+	(port
+		(pt 152 144)
+		(output)
+		(text "right" (rect 0 0 29 16)(font "Arial" (font_size 8)))
+		(text "right" (rect 102 139 131 155)(font "Arial" (font_size 8)))
+		(line (pt 152 144)(pt 136 144))
+	)
+	(port
+		(pt 152 160)
+		(output)
+		(text "up" (rect 0 0 16 16)(font "Arial" (font_size 8)))
+		(text "up" (rect 115 155 131 171)(font "Arial" (font_size 8)))
+		(line (pt 152 160)(pt 136 160))
+	)
+	(port
+		(pt 152 176)
+		(output)
+		(text "down" (rect 0 0 35 16)(font "Arial" (font_size 8)))
+		(text "down" (rect 96 171 131 187)(font "Arial" (font_size 8)))
+		(line (pt 152 176)(pt 136 176))
+	)
+	(port
+		(pt 152 192)
+		(output)
+		(text "led[9..0]" (rect 0 0 55 16)(font "Arial" (font_size 8)))
+		(text "led[9..0]" (rect 76 187 131 203)(font "Arial" (font_size 8)))
+		(line (pt 152 192)(pt 136 192)(line_width 3))
+	)
+	(port
+		(pt 152 32)
+		(bidir)
+		(text "ps2clk" (rect 0 0 44 16)(font "Arial" (font_size 8)))
+		(text "ps2clk" (rect 87 27 131 43)(font "Arial" (font_size 8)))
+		(line (pt 152 32)(pt 136 32))
+	)
+	(port
+		(pt 152 48)
+		(bidir)
+		(text "ps2data" (rect 0 0 54 16)(font "Arial" (font_size 8)))
+		(text "ps2data" (rect 77 43 131 59)(font "Arial" (font_size 8)))
+		(line (pt 152 48)(pt 136 48))
+	)
+	(drawing
+		(rectangle (rect 16 16 136 208))
+	)
+)
