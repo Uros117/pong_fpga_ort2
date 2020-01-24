@@ -1,0 +1,64 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 264 112)
+	(text "MouseInterface" (rect 5 0 132 18)(font "Arial" (font_size 8)))
+	(text "inst" (rect 8 76 33 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLK" (rect 0 0 41 18)(font "Arial" (font_size 8)))
+		(text "CLK" (rect 21 27 62 45)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "mouse_write" (rect 0 0 105 18)(font "Arial" (font_size 8)))
+		(text "mouse_write" (rect 21 43 126 61)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 248 64)
+		(output)
+		(text "ready" (rect 0 0 46 18)(font "Arial" (font_size 8)))
+		(text "ready" (rect 181 59 227 77)(font "Arial" (font_size 8)))
+		(line (pt 248 64)(pt 232 64))
+	)
+	(port
+		(pt 248 32)
+		(bidir)
+		(text "ps2_clk_" (rect 0 0 74 18)(font "Arial" (font_size 8)))
+		(text "ps2_clk_" (rect 153 27 227 45)(font "Arial" (font_size 8)))
+		(line (pt 248 32)(pt 232 32))
+	)
+	(port
+		(pt 248 48)
+		(bidir)
+		(text "ps2_data_" (rect 0 0 88 18)(font "Arial" (font_size 8)))
+		(text "ps2_data_" (rect 139 43 227 61)(font "Arial" (font_size 8)))
+		(line (pt 248 48)(pt 232 48))
+	)
+	(drawing
+		(rectangle (rect 16 16 232 80))
+	)
+)
