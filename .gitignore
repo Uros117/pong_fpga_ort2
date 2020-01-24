@@ -3,3 +3,7 @@ cache-downloads
 inspector
 api
 source/inspector.html
+db/Pong.db_info
+db/Pong.tmw_info
+db
+output_files
