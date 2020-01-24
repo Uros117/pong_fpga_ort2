@@ -1293,3 +1293,6 @@ applicable agreement for further details.
 (junction (pt -8 832))
 (junction (pt 576 824))
 (junction (pt 640 808))
+(text "OBRISI REGISTAR" (rect 472 216 604 232)(font "Arial" (font_size 8)))
+(text "PROVERI DA LI POSTOJI DELTA PO OSI I AKO POSTOJI VRATI DIRECTION" (rect -224 488 314 504)(font "Arial" (font_size 8)))
+(text "MOZDA PROSLEDI MOUSE DATA CAP DA NEBI BRISAO REGISTAR" (rect 1288 144 1776 160)(font "Arial" (font_size 8)))
